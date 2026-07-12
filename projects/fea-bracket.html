@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SolidWorks FEA Bracket Study — Marcos Talamantes</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <p><a href="../index.html">&larr; Back</a></p>
+
+  <h1>SolidWorks FEA Bracket Study</h1>
+  <p class="tagline">Linear static analysis of an L-bracket in SOLIDWORKS Simulation, characterizing load capacity from safe to failure.</p>
+
+  <h2>Setup</h2>
+  <p>An L-bracket was modeled with a cylindrical boss at the top of the upright. The base was fully fixed and a force applied to the boss face. Material was alloy steel with a yield strength of 89,980 psi. The study type was linear static with a standard solid mesh.</p>
+
+  <h2>Load Cases</h2>
+  <p>Three load cases were run to bracket the part's capacity. Linear static analysis scales proportionally, so stress increases directly with load:</p>
+
+  <table>
+    <tr>
+      <th>Load</th>
+      <th>Max von Mises</th>
+      <th>Factor of Safety</th>
+      <th>Result</th>
+    </tr>
+    <tr>
+      <td>500 N</td>
+      <td>16,890 psi</td>
+      <td>5.3</td>
+      <td>Safe</td>
+    </tr>
+    <tr>
+      <td>2,200 N</td>
+      <td>74,300 psi</td>
+      <td>1.2</td>
+      <td>Marginal</td>
+    </tr>
+    <tr>
+      <td>5,000 N</td>
+      <td>168,900 psi</td>
+      <td>0.53</td>
+      <td>Fails</td>
+    </tr>
+  </table>
+
+  <p>Yield is reached at approximately 2,660 N.</p>
+
+  <h2>Results</h2>
+
+  <figure>
+    <img src="../images/bracket-500n.png" alt="von Mises stress plot at 500 N">
+    <figcaption>500 N — stress well below yield across the entire part.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="../images/bracket-2200n.png" alt="von Mises stress plot at 2,200 N">
+    <figcaption>2,200 N — hot spots developing at the inside of the bend and near the fixture.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="../images/bracket-5000n.png" alt="von Mises stress plot at 5,000 N">
+    <figcaption>5,000 N — stress
