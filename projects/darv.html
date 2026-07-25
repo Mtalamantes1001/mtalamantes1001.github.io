@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deployable Aerial Reconnaissance Vehicle (DAR-V) — Mark Talamantes</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <p><a href="../index.html">&larr; Back</a></p>
+
+  <h1>Deployable Aerial Reconnaissance Vehicle (DAR-V)</h1>
+  <p class="tagline">Fixed-wing UAV for autonomous flight, aerial reconnaissance, and environmental monitoring. Avionics integration lead &middot; SolidWorks design &middot; FEA failure analysis.</p>
+
+  <figure>
+    <img src="../images/darv_threeview.png" alt="DAR-V three-view CAD with dimensions: 1250 mm span, 800 mm length, 125 mm height">
+    <figcaption>Full airframe CAD &mdash; 1250 mm wingspan, 800 mm length, 125 mm height.</figcaption>
+  </figure>
+
+  <h2>What</h2>
+  <p>Developed as a small team of engineering students, the DAR-V is a fixed-wing UAV designed for autonomous flight, aerial reconnaissance, and environmental monitoring. I led the avionics integration, overseeing the setup of the flight controller, GPS, and telemetry communication systems to ensure stable and coordinated operation. The design goal was a sustainable flight time of 20 minutes within a 3-mile operational radius, using a 3D-printed modular airframe optimized for lightweight performance and field serviceability.</p>
+
+  <h2>How</h2>
+  <p><strong>Airfoil &amp; structure:</strong> Selected the Eppler 193 airfoil through CFD analysis for its high lift-to-drag ratio and stable low-speed performance at 40 mph. <strong>Design:</strong> Modeled the full airframe and internal mounting layout in SolidWorks, incorporating sections for the flight controller, GPS, video transmitter, receiver, and GPS module. <strong>Integration:</strong> Configured the INAV flight controller, mapping servo outputs and motor mixing for coordinated pitch, roll, and yaw control. <strong>Manufacturing:</strong> Employed FDM 3D printing with focus on print orientation, wall thickness, and infill pattern to improve mechanical strength and reduce deformation under aerodynamic loading.</p>
+
+  <figure>
+    <img src="../images/darv_avionics.png" alt="DAR-V avionics compartment CAD with drop-out access tray">
+    <figcaption>Avionics compartment &mdash; redesigned with a drop-out access tray for rapid component swaps without full disassembly.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="../images/darv_finredesign.png" alt="Rear fin actuation: original offset linkage versus direct-mount redesign">
+    <figcaption>Rear fin actuation &mdash; original offset linkage (left) redesigned to a direct-mount servo configuration (right) for more precise, reliable control.</figcaption>
+  </figure>
+
+  <h2>Results</h2>
+  <p>After multiple test flights, the UAV exhibited structural integrity issues concentrated at the wing-to-fuselage joint. Flight testing identified the primary structural weakness at the epoxy-bonded joint connecting the side fins to the central fuselage: under aerodynamic loading, this joint became a failure point leading to crashes. These findings drove redesigns of the rear control fins (a more rigid, direct-mount servo configuration) and the front avionics compartment (a drop-out access method for faster servicing).</p>
+
+  <figure>
+    <img src="../images/darv_built.png" alt="Built DAR-V airframe">
+    <figcaption>The built DAR-V airframe during field testing.</figcaption>
+  </figure>
+
+  <h2>FEA Failure Analysis</h2>
+  <p>To move from suspicion to evidence, I ran a static structural analysis on the airframe in SolidWorks Simulation, modeling a 3g flight-load case on the wings with the fuselage fixed. Applying a mesh control at the suspected wing-to-body connection resolved the stress accurately at that joint. The analysis confirmed the team's prior assumption: stress concentrates at the wing-to-fuselage joint &mdash; the same location the aircraft repeatedly failed in flight. Accounting for the epoxy bond and the anisotropy of the 3D-printed material at that joint explains why it became the fracture point.</p>
+
+  <figure>
+    <img src="../images/darv_fea.png" alt="DAR-V airframe von Mises stress plot under 3g loading">
+    <figcaption>Static FEA of the DAR-V airframe under a 3g load &mdash; stress concentrates at the wing-to-fuselage joint, matching the observed in-flight failure location.</figcaption>
+  </figure>
+
+</body>
+</html>
