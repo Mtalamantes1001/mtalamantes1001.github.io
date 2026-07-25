@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quadcopter — CAD Lead — Mark Talamantes</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <p><a href="../index.html">&larr; Back</a></p>
+
+  <h1>Quadcopter &mdash; CAD Lead</h1>
+  <p class="tagline">IEEE project &middot; UC Merced &middot; SolidWorks (CAD modeling + Simulation) &middot; analytical hand calculations</p>
+
+  <p>I had the opportunity to take part in the early design stages of a quadcopter project for the IEEE club on campus, oriented around object model recognition. I used this opportunity to help design the 3D frame in SolidWorks and to validate the design under load through simulation testing.</p>
+
+  <p>The frame consists of three core structural components &mdash; the central hub (bracket), the arm rods, and the motor mounts &mdash; assembled as shown below. To determine whether each component in the base would be sufficient, I tested each part separately under representative flight loads aimed at our project's use case.</p>
+
+  <figure>
+    <img src="../images/Assembly.png" alt="Quadcopter frame assembly">
+    <figcaption>Quadcopter frame assembly &mdash; central hub, four arm rods, and motor mounts.</figcaption>
+  </figure>
+
+  <h2>Component Results</h2>
+  <p>Each part was analyzed under its governing load and validated with a reaction-force equilibrium check and a mesh convergence study. The analysis identified the rod as the frame's weak point:</p>
+
+  <table>
+    <tr>
+      <th>Component</th>
+      <th>Load Case</th>
+      <th>Max von Mises</th>
+      <th>Result</th>
+    </tr>
+    <tr>
+      <td>Central Hub</td>
+      <td>3g payload (88 N)</td>
+      <td>~0.05 MPa</td>
+      <td>Safe</td>
+    </tr>
+    <tr>
+      <td>Motor Mount</td>
+      <td>Thrust (15 N)</td>
+      <td>~0.10 MPa</td>
+      <td>Safe</td>
+    </tr>
+    <tr>
+      <td>Arm Rod</td>
+      <td>Tip bending (15 N)</td>
+      <td>~76 MPa</td>
+      <td>Fails</td>
+    </tr>
+  </table>
+
+  <p>The rod yields at the hub joint. This result was confirmed independently with a beam-theory hand calculation (&sigma; = Mc/I) that matched the simulation within ~1%.</p>
+
+  <h2>Central Hub (Bracket)</h2>
+  <p>Carries the payload through its four arm joints. Under load it stayed far below yield with a large safety margin &mdash; not a structural concern.</p>
+
+  <figure>
+    <img src="../images/bracket_c.png" alt="Central hub von Mises stress plot">
+    <figcaption>Central hub &mdash; von Mises stress, finest mesh.</figcaption>
+  </figure>
+
+  <h2>Motor Mount</h2>
+  <p>Reacts the motor's thrust through its bolt pattern. Held up safely, with stress concentrated at the bolt holes and confirmed stable through mesh convergence.</p>
+
+  <figure>
+    <img src="../images/motor_mount_b.png" alt="Motor mount von Mises stress plot">
+    <figcaption>Motor mount &mdash; von Mises stress at the bolt holes.</figcaption>
+  </figure>
+
+  <h2>Arm Rod</h2>
+  <p>Carries the bending load from motor thrust. This was the frame's weak point &mdash; it yielded at the hub joint, the failure confirmed by hand calculation within ~1% of the simulation.</p>
+
+  <figure>
+    <img src="../images/Rod.png" alt="Arm rod von Mises bending stress plot">
+    <figcaption>Arm rod &mdash; von Mises stress under tip bending, peaking at the hub end.</figcaption>
+  </figure>
+
+  <h2>Results</h2>
+  <p>The findings from this study led the project leads to research alternative rods better suited to the loads identified. Funding for the club's projects, including this one, was later halted in favor of other ongoing priorities.</p>
+
+</body>
+</html>
