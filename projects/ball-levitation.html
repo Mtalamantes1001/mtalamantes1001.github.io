@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ball-Levitation Control System — Marcos Talamantes</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Page-scoped styling only for elements the base stylesheet may not cover.
+       Neutral on purpose so it won't fight your existing style.css. */
+    .project-meta { color: #555; font-size: 0.95rem; margin-top: -0.25rem; }
+    .tools { color: #555; font-size: 0.95rem; }
+    figure { margin: 1.5rem 0; }
+    figure img { max-width: 100%; height: auto; display: block; border: 1px solid #e0e0e0; }
+    figcaption { font-size: 0.9rem; color: #666; margin-top: 0.4rem; }
+    .back-link { display: inline-block; margin-bottom: 1.5rem; }
+    /* Tighten the list sections: real bullets, no dividers, no extra spacing */
+    ul { list-style: disc; padding-left: 1.4rem; margin: 0.5rem 0; }
+    ul li { margin: 0.2rem 0; padding: 0; border: none; }
+    /* Center a specific figure (image + caption) */
+    figure.centered { text-align: center; }
+    figure.centered img { margin: 0 auto; }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="../index.html">&larr; Back to portfolio</a>
+
+  <h1>Ball-Levitation Control System</h1>
+  <p class="project-meta">Personal Project &middot; Model-Based Control (Simulink + Arduino)</p>
+  <p class="tools"><strong>Tools:</strong> Simulink &middot; MATLAB &middot; Arduino IDE &middot; PID control &middot; IR distance sensor &middot; PWM blower &middot; potentiometer</p>
+
+  <h2>What?</h2>
+  <p>
+    This project is a closed-loop ball levitation system that uses an
+    <strong>IR distance sensor</strong> and <strong>PWM-controlled blower</strong>
+    to hold a ping-pong ball at a set height inside a tube. Built using
+    <strong>Simulink</strong> model-based design with real-time embedded deployment
+    to an <strong>Arduino</strong> for dynamic airflow control.
+  </p>
+
+  <figure>
+    <img src="../images/ball-levitation-simulink.png" alt="Simulink block diagram of the closed-loop ball levitation control system, showing sensor input, PID controller, and PWM blower output.">
+    <figcaption>Simulink Model</figcaption>
+  </figure>
+
+  <h2>How?</h2>
+  <ul>
+    <li><strong>Modeling:</strong> Developed a <strong>Simulink</strong> control converting nonlinear <strong>IR sensor</strong> voltage into <strong>position feedback</strong> for closed-loop regulation.</li>
+    <li><strong>Control:</strong> Implemented a <strong>PID</strong> based controller to modulate the wind blower <strong>PWM</strong> and stabilize the ball at various setpoints.</li>
+    <li><strong>Integration:</strong> Interfaced the IR sensor, motor driver, and blower through an Arduino, <strong>deploying</strong> the Simulink model for <strong>real-time</strong> execution.</li>
+    <li><strong>Testing:</strong> Tuned gains, <strong>filtered noise,</strong> and <strong>refined logic</strong> to maintain stable levitation.</li>
+  </ul>
+
+  <h2>Diagram Setup</h2>
+  <ul>
+    <li><strong>Top strand:</strong> Sends a constant value of 1 to the digital pin to keep the blower motor activated.</li>
+    <li><strong>Middle strand:</strong> Converts the potentiometer's height input into a velocity command with an 8&nbsp;cm added offset for sensor correction.</li>
+    <li><strong>Bottom strand:</strong> Uses a MATLAB function to turn the IR sensor voltage into a distance reading.</li>
+    <li><strong>Sum block:</strong> Compares setpoint and sensor distance to generate control error for airflow.</li>
+  </ul>
+
+  <h2>Results?</h2>
+  <ul>
+    <li>Achieved stable levitation across multiple setpoints with real-time control.</li>
+    <li>Validated distance conversion and reliable sensor feedback.</li>
+    <li>Demonstrated effective closed-loop airflow regulation using Simulink-deployed embedded control.</li>
+    <li>Worked on PID tuning, sensor integration, and model-driven development.</li>
+  </ul>
+
+  <figure class="centered">
+    <img src="../images/ball-levitation-test1.png" alt="Physical test setup of the ball levitation system with the reference point set at 13 cm.">
+    <figcaption>Test #1: Reference pt. set at 13&nbsp;cm</figcaption>
+  </figure>
+
+  <h2>Analysis</h2>
+  <p>
+    The scope results show the system's behavior when the potentiometer was
+    adjusted to a <strong>13&nbsp;cm</strong> reference height. The
+    <strong>left graph</strong> confirms the setpoint transition as the
+    <strong>potentiometer</strong> moves and adjusts to the desired reference. The
+    <strong>middle graph</strong> shows the <strong>IR sensor</strong> tracking the
+    ball's real-time position, hovering near the <strong>13&nbsp;cm level</strong>
+    with natural fluctuation from airflow dynamics. The <strong>right graph</strong>
+    represents <strong>Pulse Width Modulation (PWM) output</strong>, which remains
+    steady, indicating that the system reached a point of stabilization. Together,
+    the graphs demonstrate that the system was consistent for the intended
+    application.
+  </p>
+
+  <figure>
+    <img src="../images/ball-levitation-scopes.png" alt="Three Simulink scope graphs: setpoint transition (left), IR sensor position tracking near 13 cm (middle), and steady PWM output (right).">
+    <figcaption>Scope results &mdash; setpoint (left), sensor position (middle), PWM output (right).</figcaption>
+  </figure>
+</body>
+</html>
