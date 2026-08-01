@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surveillance and Control Autonomous Rover (SCAR) — Marcos Talamantes</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Page-scoped styling only for elements the base stylesheet may not cover.
+       Neutral on purpose so it won't fight your existing style.css. */
+    .project-meta { color: #555; font-size: 0.95rem; margin-top: -0.25rem; }
+    .tools { color: #555; font-size: 0.95rem; }
+    figure { margin: 1.5rem 0; }
+    figure img { max-width: 100%; height: auto; display: block; border: 1px solid #e0e0e0; }
+    figcaption { font-size: 0.9rem; color: #666; margin-top: 0.4rem; }
+    .back-link { display: inline-block; margin-bottom: 1.5rem; }
+    /* Tighten the list sections: real bullets, no dividers, no extra spacing */
+    ul { list-style: disc; padding-left: 1.4rem; margin: 0.5rem 0; }
+    ul li { margin: 0.2rem 0; padding: 0; border: none; }
+    /* Center a specific figure (image + caption) */
+    figure.centered { text-align: center; }
+    figure.centered img { margin: 0 auto; }
+    /* Two figures side by side; stacks on narrow screens */
+    .figure-row { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0; }
+    .figure-row figure { flex: 1 1 45%; min-width: 240px; margin: 0; }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="../index.html">&larr; Back to portfolio</a>
+
+  <h1>Surveillance and Control Autonomous Rover (SCAR)</h1>
+  <p class="project-meta">Personal Project &middot; Autonomous Rover (ESP32-CAM + Arduino)</p>
+  <p class="tools"><strong>Tools:</strong> SolidWorks &middot; Arduino IDE &middot; ESP32-CAM &middot; HM-10 BLE &middot; 2DOF pan/tilt servos &middot; omnidirectional drive &middot; 3D printing</p>
+
+  <h2>What?</h2>
+  <p>
+    This project is a <strong>six-direction rover</strong> designed to integrate
+    <strong>camera motion tracking</strong>, <strong>omnidirectional movement</strong>,
+    and <strong>wireless video transmission</strong> that can be streamed to
+    third-party web servers.
+  </p>
+
+  <figure class="centered">
+    <img src="../images/scar-rover.png" alt="Surveillance and Control Autonomous Rover chassis with omnidirectional wheels, ESP32-CAM module, and wiring.">
+    <figcaption>Rover platform &mdash; omnidirectional chassis with the ESP32-CAM camera system.</figcaption>
+  </figure>
+
+  <h2>How?</h2>
+  <ul>
+    <li><strong>Design:</strong> Created a <strong>two degree of freedom (2DOF)</strong> servo mount in <strong>SolidWorks</strong>, giving pan and tilt control for the camera system.</li>
+    <li><strong>Integration:</strong> Incorporated an <strong>ESP32-CAM</strong> module for live streaming, motion-detection triggered recording, and SD card storage. Added an <strong>HM-10 BLE</strong> module for mobile control.</li>
+    <li><strong>Programming:</strong> Developed the system code in <strong>Arduino IDE</strong> to host a URL website for <strong>First Person Video (POV)</strong>.</li>
+    <li><strong>Fabrication:</strong> Designed and <strong>3D printed</strong> the servo mount for the camera module to ensure stable recording.</li>
+  </ul>
+
+  <h2>Servo Mount</h2>
+  <p>
+    The 2DOF pan/tilt mount was designed in SolidWorks and 3D printed. The exploded
+    view shows the individual servos and printed brackets that make up the assembly;
+    the assembled view shows the final pan-and-tilt configuration that carries and
+    stabilizes the camera.
+  </p>
+  <div class="figure-row">
+    <figure>
+      <img src="../images/scar-servo-mount.png" alt="CAD render of the assembled 2DOF pan-and-tilt servo mount.">
+      <figcaption>Assembled mount &mdash; final pan/tilt configuration.</figcaption>
+    </figure>
+    <figure>
+      <img src="../images/scar-servo-mount-exploded.png" alt="Exploded CAD view of the 2DOF servo mount showing the individual servos and 3D-printed brackets.">
+      <figcaption>Exploded view &mdash; servos and 3D-printed brackets.</figcaption>
+    </figure>
+  </div>
+
+  <h2>Results</h2>
+  <p>
+    Constructed a reliable omnidirectional rover capable of capturing and streaming
+    video, with secure data logging accessible from 50 feet out.
+  </p>
+  <p>
+    The project reinforced skills in mechanical design, IoT communication, and
+    embedded system programming, bringing them together into one autonomous and
+    responsive platform.
+  </p>
+  <p>
+    A practical application for this rover is remote surveillance &mdash; enabling
+    safer assessment of dangerous environments without direct human involvement.
+  </p>
+</body>
+</html>
