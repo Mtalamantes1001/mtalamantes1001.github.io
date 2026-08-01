@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wildfire Early-Detection System — Marcos Talamantes</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Page-scoped styling only for elements the base stylesheet may not cover.
+       Neutral on purpose so it won't fight your existing style.css. */
+    .project-meta { color: #555; font-size: 0.95rem; margin-top: -0.25rem; }
+    .tools { color: #555; font-size: 0.95rem; }
+    figure { margin: 1.5rem 0; }
+    figure img { max-width: 100%; height: auto; display: block; border: 1px solid #e0e0e0; }
+    figcaption { font-size: 0.9rem; color: #666; margin-top: 0.4rem; }
+    .back-link { display: inline-block; margin-bottom: 1.5rem; }
+    /* Tighten the How/Results lists: real bullets, no dividers, no extra spacing */
+    ul { list-style: disc; padding-left: 1.4rem; margin: 0.5rem 0; }
+    ul li { margin: 0.2rem 0; padding: 0; border: none; }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="../index.html">&larr; Back to portfolio</a>
+
+  <h1>Wildfire Early-Detection System</h1>
+  <p class="project-meta">Personal Project &middot; Dual-Arduino IoT Prototype</p>
+  <p class="tools"><strong>Tools:</strong> Arduino IDE &middot; SolidWorks &middot; MQ-2 gas sensor &middot; temp/humidity sensor &middot; water sensor &middot; HM-10 BLE &middot; RTC &middot; SD logging &middot; FDM 3D printing</p>
+
+  <h2>What?</h2>
+  <p>
+    This project is a dual-Arduino prototype designed to <strong>monitor</strong>
+    temperature, humidity, gas concentration, and water presence for early wildfire
+    detection. It functions as a low-cost <strong>IoT device</strong> for on-site
+    logging and <strong>BLE transmission</strong> for real-time monitoring.
+  </p>
+
+  <figure>
+    <img src="../images/Processflow_WEDS.png" alt="System process flowchart: site setup, calibration, autonomous data capture, on-site alerts, and data upload for analysis.">
+    <figcaption>System Process</figcaption>
+  </figure>
+
+  <h2>How?</h2>
+  <ul>
+    <li><strong>Design:</strong> Created a compact enclosure in <strong>SolidWorks</strong>, for component clearance.</li>
+    <li><strong>Integration:</strong> Utilized a <strong>two-microcontroller transmission</strong> with both boards handling different hardware components.</li>
+    <li><strong>Programming:</strong> Used <strong>Arduino IDE</strong> to <strong>calibrate</strong> sensor readings, communication paths, and datalogging.</li>
+    <li><strong>Fabrication:</strong> Incorporated additive manufacturing to 3D print enclosure while soldering and housing electrical system.</li>
+  </ul>
+
+  <figure>
+    <img src="../images/layout_WEDS.png" alt="Labeled electrical system on a breadboard: lead board, secondary board, power source, LCD display, temp/humidity sensor, MQ-2 gas sensor, water sensor, BLE HM-10 module, RTC module, and SD adapter.">
+    <figcaption>Electrical System</figcaption>
+  </figure>
+
+  <h2>Results?</h2>
+  <ul>
+    <li>Achieved data collection across all sensors with synchronized time logging.</li>
+    <li>Established <strong>Bluetooth range of 40 meters,</strong> maintain consistent communication without loss.</li>
+    <li>Enabled <strong>tracking and analysis</strong> of transmitted data for identifying visual environmental trends and early hazards indicators.</li>
+    <li>Maintained total prototype <strong>cost under $50</strong> for reliable system.</li>
+  </ul>
+
+  <figure>
+    <img src="../images/Deployment_WEDS.png" alt="Final 3D-printed enclosure housing the system, with the LCD reading a live humidity value.">
+    <figcaption>Final Form</figcaption>
+  </figure>
+</body>
+</html>
