@@ -1,8 +1,9 @@
 :root {
-  --bg: #fdfdfc;
+  --bg: #faf9f6;
   --text: #1a1a1a;
   --muted: #6b6b6b;
-  --accent: #2d5f7c;
+  --accent: #185fa5;
+  --accent-dark: #0c447c;
 }
 
 body {
@@ -19,16 +20,17 @@ h1 {
   font-size: 2.2rem;
   margin-bottom: 0.25rem;
   letter-spacing: -0.02em;
+  color: var(--accent-dark);
 }
 
 h2 {
   font-size: 1.15rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--muted);
+  color: var(--accent-dark);
   margin-top: 3rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #d8e2ec;
 }
 
 .tagline {
@@ -52,7 +54,10 @@ a {
   font-weight: 500;
 }
 
-a:hover { text-decoration: underline; }
+a:hover {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
 
 table {
   width: 100%;
