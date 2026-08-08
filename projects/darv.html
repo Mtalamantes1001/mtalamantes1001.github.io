@@ -48,52 +48,49 @@
   </figure>
 
   
+<h2>Results</h2>
 
-  <h2>Results</h2>
-
-    <figure>
-    <img src="../images/darv_built.png" alt="Built DAR-V airframe">
+  <figure>
+    <img src="../images/darv_built.png" alt="Built DAR-V airframe during field testing">
     <figcaption>The built DAR-V airframe during field testing.</figcaption>
   </figure>
 
-
   <p>
-    After initial test flights, we recorded early flgiht times around 3 minute mark before it'd 
-    realizing mid-flight that our rear wings were not as reponsive during midflight, causing
-    turns to be slow. After analyzing it seen there was structural problems at the rear fin and
-    fuselage with our first actuation approach, the offset linkage introduced slop and
-    inconsistent control response. Working through it with the team, I redesigned the
-    layout into a side-by-side configuration with a dedicated servo driving each fin
-    simultaneously, removing the linkage play for more direct, repeatable actuation.
+    After initial test flights, we recorded early flight times around the 3-minute mark
+    before noticing mid-flight that the rear wings weren't responsive enough, making turns
+    slow. Analyzing it, I traced the problem to the rear fuselage: its diameter was too
+    narrow, and that single issue caused two failures at once.
   </p>
- <figure>
+  <p>
+    First, the 3D-printed steering linkage was crammed into that tight space and was too
+    weak to reliably drive the rear wings. Second, the servo bodies rubbed against the
+    fuselage through their rotation, adding drag and delay in turns. Working through it with
+    the team, I widened the fuselage diameter to open up clearance and replaced the cramped
+    printed linkage with direct servo control to each wing, running through a roller bearing
+    for smooth, precise actuation. Together these changes removed the rubbing and gave
+    stronger, more direct control, noticeably improving flight stability, especially in
+    turns.
+  </p>
+
+  <figure>
     <img src="../images/darv_finredesign.png" alt="Rear fin actuation: original offset linkage versus direct-mount redesign">
-    <figcaption>Rear fin actuation &mdash; original offset linkage (left) redesigned to a direct-mount servo configuration (right) for more precise, reliable control.</figcaption>
+    <figcaption>Rear fin actuation, original offset linkage (left) redesigned to direct servo control (right) for more precise, reliable steering.</figcaption>
   </figure>
 
   <p>
-    Above is the design changes mentioned, other changes worth mentioning is the diameter
-    incorporating the rear wings was increased to provide more spacing between componnets 
-    ran through the main assembly. The redesign noticeably improved flight stability
-     and flight time reached nearly 7 minutes, successfully 2x our previous records. 
+    A second round of flight testing reached flight times of about 9 minutes, but it also
+    surfaced a separate, more serious failure: under repeated aerodynamic loading, the
+    central fuselage fractured at the wing-root cross-section, where the wings' bending
+    loads are reacted into the body. The wings themselves held, instead the printed body
+    section gave way, snapping the airframe just behind the wing and separating the nose and
+    avionics bay. Because this was the highest-bending-moment station on the airframe and a
+    3D-printed cross-section, it was a likely weak point, which is what drove my FEA study.
   </p>
-<p>
-    Althoughsecond round of flight testing reached flight times of 9 minutes, it also 
-    surfaced a separate, more serious failure: under
-    repeated aerodynamic loading, the central fuselage fractured at the wing-root cross-
-    section. The point where the wings' bending loads are reacted into the body. The
-    wings themselves held; instead the printed body section gave way, snapping the
-    airframe just behind the wing and separating the nose and avionics bay. Because this
-    was the highest-bending-moment station on the airframe and a 3D-printed cross-section,
-    it was a likely weak point. which is what drove my FEA study to move from suspicion
-    to evidence.
-  </p>
-  
-<figure>
-    <img src="../images/darv_broken.png" alt="DAR-V after in-flight failure: fuselage fractured at the wing-root cross-section, nose and avionics bay separated, wings intact">
-    <figcaption>DAR-V after the second-round failure &mdash; the printed fuselage fractured at the wing-root cross-section, separating the nose and avionics bay while the wings held.</figcaption>
-  </figure>
 
+  <figure>
+    <img src="../images/darv_broken.png" alt="DAR-V after in-flight failure: fuselage fractured at the wing-root cross-section, nose and avionics bay separated, wings intact">
+    <figcaption>DAR-V after the second-round failure, the printed fuselage fractured at the wing-root cross-section, separating the nose and avionics bay while the wings held.</figcaption>
+  </figure>
 
  <h2>FEA Failure Analysis</h2>
   <p>
