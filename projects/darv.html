@@ -10,7 +10,7 @@
   <p><a href="../index.html">&larr; Back</a></p>
 
   <h1>Deployable Aerial Reconnaissance Vehicle (DAR-V)</h1>
-  <p class="tagline">Fixed-wing UAV for autonomous flight, aerial reconnaissance, and Avionics integration &middot; SolidWorks design &middot; FEA failure analysis.</p>
+  <p class="tagline">Fixed-wing UAV for controlled flight, aerial reconnaissance, and Avionics integration &middot; SolidWorks design &middot; FEA failure analysis.</p>
 
   <figure>
     <img src="../images/darv_threeview.png" alt="DAR-V three-view CAD with dimensions: 1250 mm span, 800 mm length, 125 mm height">
@@ -27,6 +27,12 @@
     From there, I helped model the airframe and internal layout in SolidWorks, with a
     central core designed to hold the system's avionics:
   </p>
+
+<figure>
+    <img src="../images/darv_avionics.png" alt="DAR-V avionics compartment CAD with drop-out access tray">
+    <figcaption>Avionics compartment &mdash; with a drop-out access tray for rapid component swaps without full disassembly.</figcaption>
+  </figure>
+
   <ul>
     <li><strong>Flight controller:</strong> runs INAV, creates control loop processing for the aircraft</li>
     <li><strong>GPS:</strong> provides position hold and path routing</li>
@@ -40,12 +46,6 @@
     printed, I also handled print orientation, wall thickness, and infill pattern to
     maximize strength and limit deformation under aerodynamic loading.
   </p>
-
-
-  <figure>
-    <img src="../images/darv_avionics.png" alt="DAR-V avionics compartment CAD with drop-out access tray">
-    <figcaption>Avionics compartment &mdash; redesigned with a drop-out access tray for rapid component swaps without full disassembly.</figcaption>
-  </figure>
 
   
 <h2>Results</h2>
@@ -96,10 +96,10 @@
   <p>
     With the failure location identified in flight, I ran a static structural analysis on
     the airframe in SolidWorks Simulation to confirm it, modeling a 3g flight-load case on
-    the wings with the fuselage fixed. Applying a mesh control at the wing-root cross-
+    the wings with the fuselage fixed. Applying a mesh control at the wing-root cross 
     section resolved the stress accurately at that connection. The analysis confirmed what
-    the crashes had shown: stress concentrates where the wings meet the central body — the
-    same station the airframe repeatedly failed in flight. Accounting for the epoxy-bonded
+    the crashes had shown: stress concentrates where the wings meet the central body, the
+    same station the airframe repeatedly failed in flight. Accounting for the epoxy bonded
     steel rods and the anisotropy of the 3D-printed body at that joint explains why it
     became the fracture point.
   </p>
