@@ -50,23 +50,63 @@
   
 
   <h2>Results</h2>
-  <p>After multiple test flights, the UAV exhibited structural integrity issues concentrated at the wing-to-fuselage joint. Flight testing identified the primary structural weakness at the epoxy-bonded joint connecting the side fins to the central fuselage: under aerodynamic loading, this joint became a failure point leading to crashes. These findings drove redesigns of the rear control fins (a more rigid, direct-mount servo configuration) and the front avionics compartment (a drop-out access method for faster servicing).</p>
 
-
-  
-  <figure>
-    <img src="../images/darv_finredesign.png" alt="Rear fin actuation: original offset linkage versus direct-mount redesign">
-    <figcaption>Rear fin actuation &mdash; original offset linkage (left) redesigned to a direct-mount servo configuration (right) for more precise, reliable control.</figcaption>
-  </figure>
-
-
-  <figure>
+    <figure>
     <img src="../images/darv_built.png" alt="Built DAR-V airframe">
     <figcaption>The built DAR-V airframe during field testing.</figcaption>
   </figure>
 
+
+  <p>
+    After initial test flights, we recorded early flgiht times around 3 minute mark before it'd 
+    realizing mid-flight that our rear wings were not as reponsive during midflight, causing
+    turns to be slow. After analyzing it seen there was structural problems at the rear fin and
+    fuselage with our first actuation approach, the offset linkage introduced slop and
+    inconsistent control response. Working through it with the team, I redesigned the
+    layout into a side-by-side configuration with a dedicated servo driving each fin
+    simultaneously, removing the linkage play for more direct, repeatable actuation.
+  </p>
+ <figure>
+    <img src="../images/darv_finredesign.png" alt="Rear fin actuation: original offset linkage versus direct-mount redesign">
+    <figcaption>Rear fin actuation &mdash; original offset linkage (left) redesigned to a direct-mount servo configuration (right) for more precise, reliable control.</figcaption>
+  </figure>
+
+  <p>
+    Above is the design changes mentioned, other changes worth mentioning is the diameter
+    incorporating the rear wings was increased to provide more spacing between componnets 
+    ran through the main assembly. The redesign noticeably improved flight stability
+     and flight time reached nearly 7 minutes, successfully 2x our previous records. 
+  </p>
+<p>
+    Althoughsecond round of flight testing reached flight times of 9 minutes, it also 
+    surfaced a separate, more serious failure: under
+    repeated aerodynamic loading, the central fuselage fractured at the wing-root cross-
+    section. The point where the wings' bending loads are reacted into the body. The
+    wings themselves held; instead the printed body section gave way, snapping the
+    airframe just behind the wing and separating the nose and avionics bay. Because this
+    was the highest-bending-moment station on the airframe and a 3D-printed cross-section,
+    it was a likely weak point. which is what drove my FEA study to move from suspicion
+    to evidence.
+  </p>
+  
+<figure>
+    <img src="../images/darv_broken.png" alt="DAR-V after in-flight failure: fuselage fractured at the wing-root cross-section, nose and avionics bay separated, wings intact">
+    <figcaption>DAR-V after the second-round failure &mdash; the printed fuselage fractured at the wing-root cross-section, separating the nose and avionics bay while the wings held.</figcaption>
+  </figure>
+
+
   <h2>FEA Failure Analysis</h2>
-  <p>To move from suspicion to evidence, I ran a static structural analysis on the airframe in SolidWorks Simulation, modeling a 3g flight-load case on the wings with the fuselage fixed. Applying a mesh control at the suspected wing-to-body connection resolved the stress accurately at that joint. The analysis confirmed the team's prior assumption: stress concentrates at the wing-to-fuselage joint &mdash; the same location the aircraft repeatedly failed in flight. Accounting for the epoxy bond and the anisotropy of the 3D-printed material at that joint explains why it became the fracture point.</p>
+ <h2>FEA Failure Analysis</h2>
+  <p>
+    With the failure location identified in flight, I ran a static structural analysis on
+    the airframe in SolidWorks Simulation to confirm it, modeling a 3g flight-load case on
+    the wings with the fuselage fixed. Applying a mesh control at the wing-root cross-
+    section resolved the stress accurately at that connection. The analysis confirmed what
+    the crashes had shown: stress concentrates where the wings meet the central body — the
+    same station the airframe repeatedly failed in flight. Accounting for the epoxy-bonded
+    steel rods and the anisotropy of the 3D-printed body at that joint explains why it
+    became the fracture point.
+  </p>
 
   <figure>
     <img src="../images/darv_fea.png" alt="DAR-V airframe von Mises stress plot under 3g loading">
