@@ -29,18 +29,17 @@
   <a class="back-link" href="../index.html">&larr; Back to portfolio</a>
 
   <h1>LiDAR Groundwater Monitoring System</h1>
-  <p class="project-meta">Woodpecker Microsystems &times; MIUGSA &middot; Senior Capstone &middot; Project Lead</p>
-  <p class="tools"><strong>Tools:</strong> Benewake TF03-100 LiDAR &middot; Raspberry Pi &middot; Time-of-Flight sensing &middot; solar power system &middot; SolidWorks &middot; FDM 3D printing (ABS-GF, PETG)</p>
+  <p class="project-meta">Woodpecker Microsystems &times; MIUGSA &middot; Senior Capstone &middot; Project lead</p>
+  <p class="tools"><strong>Tools:</strong> TOF LIDAR Sensor &middot; Raspberry Pi &middot; Controls Integration &middot; SolidWorks &middot; FDM 3D Printing </p>
 
   <h2>Overview</h2>
   <p>
-    A low-cost, solar-powered <strong>LiDAR</strong> system for automated
-    groundwater-level monitoring, built for <strong>Woodpecker Microsystems</strong>
-    and the Merced Irrigation-Urban Groundwater Sustainability Agency
-    (<strong>MIUGSA</strong>). As <strong>Project Lead</strong> of the four-person
-    capstone team, I guided the system from concept through three phases of testing
-    to field validation.
+    Developed a low cost LiDAR system for automated groundwater level monitoring, built for Woodpecker Microsystems and Merced Irrigation Urban Groundwater 
+Sustainability Agency (MIUGSA). As the Project lead shared with three other students, I helped guide the system from concept to field validation testing. 
   </p>
+
+
+
 
   <figure class="centered">
     <img src="../images/lidar-assembly.png" alt="Labeled assembly of the LiDAR groundwater monitor: LiDAR sensor, ABS-GF bracket, weatherproof box with Raspberry Pi, solar panel, and power bank mounted over a well.">
@@ -49,43 +48,43 @@
 
   <h2>The Problem</h2>
   <p>
-    The Merced subbasin is <strong>critically overdrafted</strong> and falls under
+    The Merced subbasin is critically overdrafted and falls under
     California's SGMA mandate to actively manage groundwater. The existing manual
-    method relies on pressure transducers costing <strong>$3,000&ndash;$5,000 per
-    well</strong>, read by hand from well to well &mdash; expensive, labor-intensive,
+    method relies on pressure transducers costing $3,000&ndash;$5,000 per
+    well, read by hand from well to well, making it labor-intensive,
     and leaving inconsistent, sparse data across the basin. The client needed an
     automated, low-cost alternative that could scale across many wells.
   </p>
 
   <h2>The Solution</h2>
   <p>
-    A <strong>Benewake TF03-100</strong> LiDAR sensor mounts at the top of a 16-inch
+    A Benewake TF03-100 LiDAR sensor mounts at the top of a 16-inch
     monitoring well and fires a 905&nbsp;nm pulsed infrared laser downward onto a
-    <strong>PETG floating disk</strong> coated with retroreflective tape at the water
+    PETG floating disk coated with retroreflective tape at the water
     surface. The reflected signal returns to the sensor, and distance is computed by
-    <strong>Time-of-Flight</strong>. A <strong>Raspberry Pi</strong> logs measurements
-    three times daily, powered indefinitely off-grid by a solar-charged power bank
-    &mdash; no moving parts and minimal modification to existing wells.
+    Time-of-Flight. A Raspberry Pi logs measurements
+    three times daily, powered indefinitely off-grid by a solar-charged power bank, with no moving parts and minimal 
+    modification to existing equipment.
   </p>
 
   <h2>Key Components</h2>
   <ul>
     <li><strong>TF03-100 LiDAR sensor:</strong> 100&nbsp;m range, 5V UART, &plusmn;1% accuracy.</li>
     <li><strong>Reflective floating disk:</strong> PETG body with retroreflective tape; the geometry returns the signal even with minor angular deviation.</li>
-    <li><strong>Mounting bracket:</strong> ABS-GF, 3D printed; keeps the beam aligned perpendicular to the water surface at depth.</li>
+    <li><strong>Mounting bracket:</strong> ABS, 3D printed; keeps the beam aligned perpendicular to the water surface at depth.</li>
     <li><strong>Power system:</strong> Raspberry Pi + power bank + 1&times;1&nbsp;ft solar panel, with a wake timer to minimize power draw.</li>
   </ul>
 
   <h2>Testing &amp; Results</h2>
   <p>
     The system was validated in three phases, each isolating a different variable
-    &mdash; from picking the reflective material, to scaling distance to the limit,
+    from picking the reflective material, to scaling distance to the limit,
     to a simulated real-well run.
   </p>
 
   <h3>Phase 1 &mdash; Material Selection</h3>
   <p>
-    Compared retroreflective <strong>tape, paint, and powder</strong> for signal
+    Compared retroreflective tape, paint, and powder for signal
     return in a controlled dark environment. Tape returned roughly
     <strong>135% stronger signal</strong> than the alternatives and outperformed them
     at every distance, so it was selected for the floating disk.
@@ -98,13 +97,12 @@
 
   <h3>Phase 2 &mdash; Distance Scaling (to 300 ft)</h3>
   <p>
-    Scaled the reflective disc from <strong>15 to 300&nbsp;ft</strong> &mdash; the
-    farthest range tested &mdash; to check consistency and system compatibility well
-    beyond real well depths. Signal stayed within valid operating range the whole way,
+    Scaled the reflective disc from <strong>15 to 300&nbsp;ft</strong>, the 
+    farthest range tested, to check consistency and system compatibility well
+    beyond target goal. Signal stayed within valid operating range the whole way,
     and distance error held at or below <strong>0.55"</strong> across the
     60&ndash;200&nbsp;ft band that matches Central Valley wells, rising toward
-    <strong>~1.9"</strong> only at the extreme 300&nbsp;ft edge &mdash; graceful
-    degradation well past the operational envelope.
+    <strong>1.9"</strong> only at the 300 ft mark. 
   </p>
 
   <figure class="centered">
@@ -114,11 +112,13 @@
 
   <h3>Phase 3 &mdash; Field Validation</h3>
   <p>
-    Simulated a monitor well using <strong>4" PVC pipe</strong>, tested at 10&nbsp;ft
-    increments to 100&nbsp;ft &mdash; a tighter, more restrictive geometry than a real
+
+    Due to current processes within the company, access to open wells was difficult to find. 
+    Instead we simulated a monitor well using <strong>4" PVC pipe</strong>, tested at 10&nbsp;ft
+    increments to 100&nbsp;ft, which created a tighter, more restrictive geometry than a real
     16-inch well. Mean error was <strong>0.42&nbsp;ft</strong> with every reading under
     the <strong>1&nbsp;ft design threshold</strong> (best run 0.069&nbsp;ft), confirming
-    the system operational for real well testing.
+    the system performed reliably under simulated well conditions. 
   </p>
 
   <figure class="centered">
@@ -144,7 +144,7 @@
   <h2>Outcome</h2>
   <p>
     The system met its accuracy target, validated to 100&nbsp;ft depth, and proved
-    scalable and low-cost for large well networks &mdash; delivering the client a
+    scalable and low-cost for large well networks, delivering the client a
     working, field-validated prototype that replaces a $3,000&ndash;$5,000 manual
     setup at roughly $454 per well. Refinement of the system is ongoing.
   </p>
