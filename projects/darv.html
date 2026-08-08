@@ -10,7 +10,7 @@
   <p><a href="../index.html">&larr; Back</a></p>
 
   <h1>Deployable Aerial Reconnaissance Vehicle (DAR-V)</h1>
-  <p class="tagline">Fixed-wing UAV for autonomous flight, aerial reconnaissance, and environmental monitoring. Avionics integration lead &middot; SolidWorks design &middot; FEA failure analysis.</p>
+  <p class="tagline">Fixed-wing UAV for autonomous flight, aerial reconnaissance, and Avionics integration &middot; SolidWorks design &middot; FEA failure analysis.</p>
 
   <figure>
     <img src="../images/darv_threeview.png" alt="DAR-V three-view CAD with dimensions: 1250 mm span, 800 mm length, 125 mm height">
@@ -18,23 +18,47 @@
   </figure>
 
   <h2>What</h2>
-  <p>Developed as a small team of engineering students, the DAR-V is a fixed-wing UAV designed for autonomous flight, aerial reconnaissance, and environmental monitoring. I led the avionics integration, overseeing the setup of the flight controller, GPS, and telemetry communication systems to ensure stable and coordinated operation. The design goal was a sustainable flight time of 20 minutes within a 3-mile operational radius, using a 3D-printed modular airframe optimized for lightweight performance and field serviceability.</p>
+  <p>Developed as a small team of engineering students, DAR-V is a fixed-wing UAV designed for autonomous flight. I led the avionics integration, overseeing the setup of the flight controller, GPS, and telemetry communication systems to ensure stable and coordinated operation. The design goal was a sustainable flight time of 20 minutes within a 3-mile operational radius, using a 3D-printed modular airframe optimized for lightweight performance and field serviceability.</p>
 
   <h2>How</h2>
-  <p><strong>Airfoil &amp; structure:</strong> Selected the Eppler 193 airfoil through CFD analysis for its high lift-to-drag ratio and stable low-speed performance at 40 mph. <strong>Design:</strong> Modeled the full airframe and internal mounting layout in SolidWorks, incorporating sections for the flight controller, GPS, video transmitter, receiver, and GPS module. <strong>Integration:</strong> Configured the INAV flight controller, mapping servo outputs and motor mixing for coordinated pitch, roll, and yaw control. <strong>Manufacturing:</strong> Employed FDM 3D printing with focus on print orientation, wall thickness, and infill pattern to improve mechanical strength and reduce deformation under aerodynamic loading.</p>
+  <p>
+    The project began with selecting the airfoil, where the team chose the Eppler 193
+    through CFD analysis for its high lift-to-drag ratio and stable speed performance.
+    From there, I helped model the airframe and internal layout in SolidWorks, with a
+    central core designed to hold the system's avionics:
+  </p>
+  <ul>
+    <li><strong>Flight controller:</strong> runs INAV, creates control loop processing for the aircraft</li>
+    <li><strong>GPS:</strong> provides position hold and path routing</li>
+    <li><strong>Video transmitter:</strong> sends the live camera feed to the PC for FPV and reconnaissance</li>
+    <li><strong>Receiver:</strong> takes the controller signal and passes commands to the flight controller</li>
+  </ul>
+  <p>
+    On the avionics side, I configured the INAV flight controller to mesh with our PC
+    application so we could see metrics in real time, and mapped the servo outputs and
+    motor mixing for coordinated pitch, roll, and yaw control. Since the airframe was 3D
+    printed, I also handled print orientation, wall thickness, and infill pattern to
+    maximize strength and limit deformation under aerodynamic loading.
+  </p>
+
 
   <figure>
     <img src="../images/darv_avionics.png" alt="DAR-V avionics compartment CAD with drop-out access tray">
     <figcaption>Avionics compartment &mdash; redesigned with a drop-out access tray for rapid component swaps without full disassembly.</figcaption>
   </figure>
 
+  
+
+  <h2>Results</h2>
+  <p>After multiple test flights, the UAV exhibited structural integrity issues concentrated at the wing-to-fuselage joint. Flight testing identified the primary structural weakness at the epoxy-bonded joint connecting the side fins to the central fuselage: under aerodynamic loading, this joint became a failure point leading to crashes. These findings drove redesigns of the rear control fins (a more rigid, direct-mount servo configuration) and the front avionics compartment (a drop-out access method for faster servicing).</p>
+
+
+  
   <figure>
     <img src="../images/darv_finredesign.png" alt="Rear fin actuation: original offset linkage versus direct-mount redesign">
     <figcaption>Rear fin actuation &mdash; original offset linkage (left) redesigned to a direct-mount servo configuration (right) for more precise, reliable control.</figcaption>
   </figure>
 
-  <h2>Results</h2>
-  <p>After multiple test flights, the UAV exhibited structural integrity issues concentrated at the wing-to-fuselage joint. Flight testing identified the primary structural weakness at the epoxy-bonded joint connecting the side fins to the central fuselage: under aerodynamic loading, this joint became a failure point leading to crashes. These findings drove redesigns of the rear control fins (a more rigid, direct-mount servo configuration) and the front avionics compartment (a drop-out access method for faster servicing).</p>
 
   <figure>
     <img src="../images/darv_built.png" alt="Built DAR-V airframe">
