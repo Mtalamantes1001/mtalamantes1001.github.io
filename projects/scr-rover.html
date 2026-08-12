@@ -30,7 +30,7 @@
 
   <h1>Surveillance and Controllable Rover (SCR)</h1>
   <p class="project-meta">Personal Project &middot; Remote-Controlled Rover (ESP32-CAM + Arduino)</p>
-  <p class="tools"><strong>Tools:</strong> SolidWorks &middot; Arduino IDE &middot; ESP32-CAM &middot; HM-10 BLE &middot; 2DOF pan/tilt servos &middot; omnidirectional drive &middot; 3D printing</p>
+  <p class="tools"><strong>Tools:</strong> SolidWorks &middot; Embedded Systems &middot; 3D Printing &middot; IoT connection</p>
 
   <h2>What?</h2>
   <p>
@@ -42,16 +42,21 @@
 
   <figure class="centered">
     <img src="../images/scar-rover.png" alt="Surveillance and Controllable Rover chassis with omnidirectional wheels, ESP32-CAM module, and wiring.">
-    <figcaption>Rover platform &mdash; omnidirectional chassis with the ESP32-CAM camera system.</figcaption>
+    <figcaption>Rover final assembly of system</figcaption>
   </figure>
 
+
   <h2>How?</h2>
-  <ul>
-    <li><strong>Design:</strong> Created a <strong>two degree of freedom (2DOF)</strong> servo mount in <strong>SolidWorks</strong>, giving pan and tilt control for the camera system.</li>
-    <li><strong>Integration:</strong> Incorporated an <strong>ESP32-CAM</strong> module for live streaming, motion-detection triggered recording, and SD card storage. Added an <strong>HM-10 BLE</strong> module for mobile control.</li>
-    <li><strong>Programming:</strong> Developed the system code in <strong>Arduino IDE</strong> to host a URL website for <strong>First Person Video (POV)</strong>.</li>
-    <li><strong>Fabrication:</strong> Designed and <strong>3D printed</strong> the servo mount for the camera module to ensure stable recording.</li>
-  </ul>
+  <p>
+    For this project, I designed a two degree of freedom (2DOF) servo mount in
+    SolidWorks, giving the camera system full pan and tilt control. I integrated
+    an ESP32-CAM module to enable live streaming, motion-detection triggered
+    recording, and SD card storage, along with an HM-10 BLE module for mobile
+    control. Using Arduino IDE, I developed the system code to host a
+    URL-based website for First Person Video (POV) streaming. Finally, I designed
+    and 3D printed the servo mount for the camera module to ensure stable,
+    reliable recording.
+  </p>
 
   <h2>Servo Mount</h2>
   <p>
@@ -63,26 +68,26 @@
   <div class="figure-row">
     <figure>
       <img src="../images/scar-servo-mount.png" alt="CAD render of the assembled 2DOF pan-and-tilt servo mount.">
-      <figcaption>Assembled mount &mdash; final pan/tilt configuration.</figcaption>
+      <figcaption>Final assembly of mount.</figcaption>
     </figure>
     <figure>
       <img src="../images/scar-servo-mount-exploded.png" alt="Exploded CAD view of the 2DOF servo mount showing the individual servos and 3D-printed brackets.">
-      <figcaption>Exploded view &mdash; servos and 3D-printed brackets.</figcaption>
+      <figcaption>Exploded view of servos and 3D-printed brackets.</figcaption>
     </figure>
   </div>
 
   <h2>Results</h2>
   <p>
-    Constructed a reliable omnidirectional rover capable of capturing and streaming
-    video, with secure data logging accessible from 50 feet out.
+    The Rover achieved movement in all six directions after hours of logging tire movememnt depending on the systems direction of path, and 
+    was operational to a limit of 50 feet from my desktop due to the BLE losing connection. Captured recordings of my first test runs off the ESP vision componnet 
+    are stored in my files, but I've been having trouble adding it to this online portfolio. 
   </p>
   <p>
-    The project reinforced skills in mechanical design, IoT communication, and
-    embedded system programming, bringing them together into one controllable and
-    responsive platform.
-  </p>
+    After switching majors this was my first project that I tackled, which was difficult when constructing because I learned how to integrate mechanical design of 
+    3D printing with electronic hardware and being able to project a BLE signal compaitable with my phone for controlling movement. Lastly, the satisifying part was 
+    being able to broadcast the POV of the rover to my laptop off the ESP camera componnet, which also included other programmed features like motion and object detection. 
   <p>
-    A practical application for this rover is remote surveillance &mdash; enabling
+    A practical application for this rover is remote surveillance, to provide
     safer assessment of dangerous environments while keeping the operator at a safe
     distance.
   </p>
