@@ -24,14 +24,14 @@
 
   <h1>Wildfire Early-Detection System</h1>
   <p class="project-meta">Personal Project &middot; Dual-Arduino IoT Prototype</p>
-  <p class="tools"><strong>Tools:</strong> Arduino IDE &middot; SolidWorks &middot; MQ-2 gas sensor &middot; temp/humidity sensor &middot; water sensor &middot; HM-10 BLE &middot; RTC &middot; SD logging &middot; FDM 3D printing</p>
+  <p class="tools"><strong>Tools:</strong> Arduino IDE &middot; SolidWorks &middot; Data Analysis &middot; Python &middot; Web Development</p>
 
   <h2>What?</h2>
   <p>
     This project is a dual-Arduino prototype designed to <strong>monitor</strong>
     temperature, humidity, gas concentration, and water presence for early wildfire
     detection. It functions as a low-cost <strong>IoT device</strong> for on-site
-    logging and <strong>BLE transmission</strong> for real-time monitoring.
+    logging and <strong> Bluetooth transmission</strong> for real-time monitoring.
   </p>
 
   <figure>
@@ -43,10 +43,10 @@
   <p>
     I designed a compact enclosure in <strong>SolidWorks</strong> with room for
     component clearance, then built the system around a
-    <strong>two-microcontroller architecture</strong>, with each board handling a
-    different set of hardware components. Using the <strong>Arduino IDE</strong>, I
+    <strong>two-microcontroller configuration</strong>, with each board handling a
+    different set of hardware components that communicated with each other through TX and RX protocols. Using the <strong>Arduino IDE</strong>, I
     calibrated the sensor readings, communication paths, and datalogging. Finally, I
-    used additive manufacturing to 3D print the enclosure, then soldered and housed
+    3D printed the enclosure, then soldered and housed
     the electrical system inside it.
   </p>
 
@@ -59,7 +59,7 @@
   <p>
     The prototype achieved data collection across all sensors with synchronized time
     logging and established a <strong>40-meter Bluetooth range</strong> with
-    consistent, loss-free communication. It enabled <strong>tracking and
+    consistent communication. It enabled <strong>tracking and
     analysis</strong> of the transmitted data to identify environmental trends and
     early hazard indicators, all while keeping the total prototype
     <strong>cost under $50</strong>.
