@@ -27,7 +27,7 @@
 
   <h1>Ball-Levitation Control System</h1>
   <p class="project-meta">Personal Project &middot; Model-Based Control (Simulink + Arduino)</p>
-  <p class="tools"><strong>Tools:</strong> Simulink &middot; MATLAB &middot; Arduino IDE &middot; PID control &middot; IR distance sensor &middot; PWM blower &middot; potentiometer</p>
+  <p class="tools"><strong>Tools:</strong> Simulink &middot; MATLAB &middot; Arduino IDE &middot; PID control &middot; IR distance sensor &middot; potentiometer</p>
 
   <h2>What?</h2>
   <p>
@@ -38,8 +38,8 @@
     to an <strong>Arduino</strong> for dynamic airflow control.
   </p>
   <p>
-    Pulse Width Modulation (PWM) is a technique that rapidly switches the blower's
-    power on and off, where the proportion of "on" time (the duty cycle) sets its
+    Pulse Width Modulation (PWM) is a technique that switches the blower's
+    power on and off, where the proportion of "on" time sets its
     effective speed. It's the core control lever in this project: by adjusting the
     PWM duty cycle in real time, the controller fine-tunes airflow to hold the ball
     at its setpoint rather than running the blower at a single fixed speed.
@@ -55,12 +55,11 @@
     Using <strong>Simulink</strong> model-based design, I developed a control model
     that converts the nonlinear <strong>IR sensor</strong> voltage into
     <strong>position feedback</strong> for closed-loop regulation. From there, I
-    implemented a <strong>PID</strong>-based controller to modulate the blower's
-    <strong>PWM</strong> and stabilize the ball at various setpoints. The IR sensor,
+    implemented a <strong>PID</strong>-based controller to control the blower's
+    <strong>PWM</strong> and stabilize the ball at multiple setpoints. The IR sensor,
     motor driver, and blower were interfaced through an <strong>Arduino</strong>,
-    where the Simulink model was deployed for <strong>real-time</strong> execution.
-    Finally, I tuned the gains, filtered noise, and refined the logic to maintain
-    stable levitation.
+    where the Simulink model was deployed for <strong>real-time</strong> testing.
+    Finally,after turning the system and filtering out noise, I achieved instances where the ball would hold its position. 
   </p>
 
   <h2>Diagram Setup</h2>
@@ -69,7 +68,7 @@
     <strong>top strand</strong> sends a constant value of 1 to the digital pin,
     keeping the blower motor activated. The <strong>middle strand</strong> converts
     the potentiometer's height input into a velocity command, with an 8&nbsp;cm
-    offset added for sensor correction. The <strong>bottom strand</strong> uses a
+    offset added since my sesnor was hit and miss. The <strong>bottom strand</strong> uses a
     MATLAB function to turn the IR sensor voltage into a distance reading. The
     <strong>sum block</strong> then compares the setpoint and sensor distance to
     generate the control error that drives the airflow.
@@ -80,7 +79,7 @@
     The system achieved stable levitation across multiple setpoints under real-time
     control, with validated distance conversion and reliable sensor feedback.
     Together these demonstrated effective closed-loop airflow regulation using
-    Simulink-deployed embedded control, while giving me hands-on experience with
+    Simulink embedded control, while giving me hands-on experience with
     PID tuning, sensor integration, and model-driven development.
   </p>
 
@@ -97,7 +96,7 @@
     <strong>potentiometer</strong> moves and adjusts to the desired reference. The
     <strong>middle graph</strong> shows the <strong>IR sensor</strong> tracking the
     ball's real-time position, hovering near the <strong>13&nbsp;cm level</strong>
-    with natural fluctuation from airflow dynamics. The <strong>right graph</strong>
+    with natural fluctuation from airflow. The <strong>right graph</strong>
     represents <strong>Pulse Width Modulation (PWM) output</strong>, which remains
     steady, indicating that the system reached a point of stabilization. Together,
     the graphs demonstrate that the system was consistent for the intended
