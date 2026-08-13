@@ -37,6 +37,13 @@
     <strong>Simulink</strong> model-based design with real-time embedded deployment
     to an <strong>Arduino</strong> for dynamic airflow control.
   </p>
+  <p>
+    Pulse Width Modulation (PWM) is a technique that rapidly switches the blower's
+    power on and off, where the proportion of "on" time (the duty cycle) sets its
+    effective speed. It's the core control lever in this project: by adjusting the
+    PWM duty cycle in real time, the controller fine-tunes airflow to hold the ball
+    at its setpoint rather than running the blower at a single fixed speed.
+  </p>
 
   <figure>
     <img src="../images/ball-levitation-simulink.png" alt="Simulink block diagram of the closed-loop ball levitation control system, showing sensor input, PID controller, and PWM blower output.">
@@ -44,28 +51,38 @@
   </figure>
 
   <h2>How?</h2>
-  <ul>
-    <li><strong>Modeling:</strong> Developed a <strong>Simulink</strong> control converting nonlinear <strong>IR sensor</strong> voltage into <strong>position feedback</strong> for closed-loop regulation.</li>
-    <li><strong>Control:</strong> Implemented a <strong>PID</strong> based controller to modulate the wind blower <strong>PWM</strong> and stabilize the ball at various setpoints.</li>
-    <li><strong>Integration:</strong> Interfaced the IR sensor, motor driver, and blower through an Arduino, <strong>deploying</strong> the Simulink model for <strong>real-time</strong> execution.</li>
-    <li><strong>Testing:</strong> Tuned gains, <strong>filtered noise,</strong> and <strong>refined logic</strong> to maintain stable levitation.</li>
-  </ul>
+  <p>
+    Using <strong>Simulink</strong> model-based design, I developed a control model
+    that converts the nonlinear <strong>IR sensor</strong> voltage into
+    <strong>position feedback</strong> for closed-loop regulation. From there, I
+    implemented a <strong>PID</strong>-based controller to modulate the blower's
+    <strong>PWM</strong> and stabilize the ball at various setpoints. The IR sensor,
+    motor driver, and blower were interfaced through an <strong>Arduino</strong>,
+    where the Simulink model was deployed for <strong>real-time</strong> execution.
+    Finally, I tuned the gains, filtered noise, and refined the logic to maintain
+    stable levitation.
+  </p>
 
   <h2>Diagram Setup</h2>
-  <ul>
-    <li><strong>Top strand:</strong> Sends a constant value of 1 to the digital pin to keep the blower motor activated.</li>
-    <li><strong>Middle strand:</strong> Converts the potentiometer's height input into a velocity command with an 8&nbsp;cm added offset for sensor correction.</li>
-    <li><strong>Bottom strand:</strong> Uses a MATLAB function to turn the IR sensor voltage into a distance reading.</li>
-    <li><strong>Sum block:</strong> Compares setpoint and sensor distance to generate control error for airflow.</li>
-  </ul>
+  <p>
+    The model is built from three parallel strands feeding a summing block. The
+    <strong>top strand</strong> sends a constant value of 1 to the digital pin,
+    keeping the blower motor activated. The <strong>middle strand</strong> converts
+    the potentiometer's height input into a velocity command, with an 8&nbsp;cm
+    offset added for sensor correction. The <strong>bottom strand</strong> uses a
+    MATLAB function to turn the IR sensor voltage into a distance reading. The
+    <strong>sum block</strong> then compares the setpoint and sensor distance to
+    generate the control error that drives the airflow.
+  </p>
 
   <h2>Results?</h2>
-  <ul>
-    <li>Achieved stable levitation across multiple setpoints with real-time control.</li>
-    <li>Validated distance conversion and reliable sensor feedback.</li>
-    <li>Demonstrated effective closed-loop airflow regulation using Simulink-deployed embedded control.</li>
-    <li>Worked on PID tuning, sensor integration, and model-driven development.</li>
-  </ul>
+  <p>
+    The system achieved stable levitation across multiple setpoints under real-time
+    control, with validated distance conversion and reliable sensor feedback.
+    Together these demonstrated effective closed-loop airflow regulation using
+    Simulink-deployed embedded control, while giving me hands-on experience with
+    PID tuning, sensor integration, and model-driven development.
+  </p>
 
   <figure class="centered">
     <img src="../images/ball-levitation-test1.png" alt="Physical test setup of the ball levitation system with the reference point set at 13 cm.">
